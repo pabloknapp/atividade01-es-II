@@ -1,19 +1,19 @@
-# Atividade 01 - Engenharia de Software II
+# Atividade 01 - Engenharia de Software II / Activity 01 – Software Engineering II
 
-Este repositório contém a atividade 01 da disciplina **Engenharia de Software II**.  
-O objetivo é aplicar conceitos de versionamento e boas práticas no desenvolvimento de software.
+This repository contains Activity 01 from the Software Engineering II course.
+The goal is to apply concepts of version control and best practices in software development.
 
 ---
 
-## 📋 Requisitos
-- [Node.js](https://nodejs.org/) (versão X.X.X ou superior)
+## 📋 Requirements
+- [Node.js](https://nodejs.org/) (version X.X.X or higher)
 - [Git](https://git-scm.com/)
 
 ---
 
-## 🚀 Como executar
+## 🚀 How to run:
 
-1. Clone o repositório:
+1. Clone the repository:
    ```bash
    git clone https://github.com/pabloknapp/atividade01-es-II.git
    cd atividade01-es-II
