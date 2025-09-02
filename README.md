@@ -6,7 +6,7 @@ O objetivo é aplicar conceitos de versionamento e boas práticas no desenvolvim
 ---
 
 ## 📋 Requisitos
-- [Node.js](https://nodejs.org/) (versão X.X.X ou superior)
+- [Node.js](https://nodejs.org/) 
 - [Git](https://git-scm.com/)
 
 ---
