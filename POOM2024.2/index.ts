@@ -48,5 +48,5 @@ function criaVeiculo(): Veiculo{
 }
 
     console.log(carro);
-
+    console.log("Hello world");
 
