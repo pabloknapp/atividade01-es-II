@@ -23,7 +23,9 @@ while(true){
         case 1:
             acelerar(carro);
             break;
-    
+        case 2:
+            frear(carro);
+            break;
         default:
             break;
     }
@@ -33,9 +35,22 @@ console.table(carro);
 
 function acelerar(veiculo: Veiculo): void{
     if(veiculo.marchaAtual != 0){
-    veiculo.velocidade += veiculo.potencia*0.1;
-    console.log(veiculo.velocidade);
-}}
+        veiculo.velocidade += veiculo.potencia * 0.1;
+        console.log(`Velocidade atual: ${veiculo.velocidade.toFixed(1)} km/h`);
+    } else {
+        console.log("Não é possível acelerar com a marcha em ponto morto.");
+    }
+}
+
+function frear(veiculo: Veiculo): void {
+    if(veiculo.velocidade > 0){
+        veiculo.velocidade -= veiculo.potencia * 0.1; // reduz velocidade proporcional à potência
+        if(veiculo.velocidade < 0) veiculo.velocidade = 0; // não deixa velocidade negativa
+        console.log(`Velocidade atual: ${veiculo.velocidade.toFixed(1)} km/h`);
+    } else {
+        console.log("O veículo já está parado.");
+    }
+}
 
 function criaVeiculo(): Veiculo{
     const veiculo: Veiculo = new Veiculo();
@@ -43,10 +58,9 @@ function criaVeiculo(): Veiculo{
     veiculo.modelo = teclado('Modelo: ');
     veiculo.potencia = +teclado('Potência: ');
     veiculo.numeroMarchas = +teclado('Número de marchas: ');
+    veiculo.marchaAtual = 0; // ponto morto inicial
+    veiculo.velocidade = 0;  // velocidade inicial
     return veiculo;
-
 }
 
-    console.log(carro);
-
-
+console.log(carro);
