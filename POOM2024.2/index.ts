@@ -46,20 +46,4 @@
         return veiculo;
     }
 
-function subirMarcha(veiculo: Veiculo): void {
-    if (veiculo.marchaAtual < veiculo.numeroMarchas) {
-        veiculo.marchaAtual += 1;
-        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
-    } else {
-        console.log("Você já está na marcha máxima!");
-    }
-
 console.table(carro);
-
-function acelerar(veiculo: Veiculo): void{
-    if(veiculo.marchaAtual != 0){
-    veiculo.velocidade += veiculo.potencia*0.1;
-    console.log(veiculo.velocidade);
-}}
-
-
