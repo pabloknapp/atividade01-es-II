@@ -63,15 +63,10 @@ function subirMarcha(veiculo: Veiculo): void {
     } else {
         console.log("Você já está na marcha máxima!");
     }
+}
 
-function subirMarcha(veiculo: Veiculo): void {
-    if (veiculo.marchaAtual < veiculo.numeroMarchas) {
-        veiculo.marchaAtual += 1;
-        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
-    } else {
-        console.log("Você já está na marcha máxima!");
-    }
-
+for (let i = 10; i > 0; i++){
+    console.log(`dando partida no carro em ${i}`)
 }
 
     console.log(carro);
