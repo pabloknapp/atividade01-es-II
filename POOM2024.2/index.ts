@@ -48,7 +48,7 @@ function frear(veiculo: Veiculo): void {
         if(veiculo.velocidade < 0) veiculo.velocidade = 0; // não deixa velocidade negativa
         console.log(`Velocidade atual: ${veiculo.velocidade.toFixed(1)} km/h`);
     } else {
-        console.log("O veículo já está parado.");
+        console.log("O veículo está parado.");
     }
 }
 
