@@ -1,45 +1,43 @@
-import { Veiculo } from "./Veiculo";
-import prompt from "prompt-sync";
+    import { Veiculo } from "./Veiculo";
+    import prompt from "prompt-sync";
 
-const teclado = prompt();
+    const teclado = prompt();
 
-console.log('Criação de veículo');
-const carro: Veiculo = criaVeiculo();
+    console.log('Criação de veículo');
+    const carro: Veiculo = criaVeiculo();
 
-while(true){
-    console.log("########### MENU ###########");
-    console.log("1 - Acelerar");
-    console.log("2 - Frear");
-    console.log("3 - Subir marcha");
-    console.log("4 - Descer marcha");
-    console.log("5 - Imprimir dados do veículo");
-    console.log("0 - Sair");
+    while(true){
+        console.log("########### MENU ###########");
+        console.log("1 - Acelerar");
+        console.log("2 - Frear");
+        console.log("3 - Subir marcha");
+        console.log("4 - Descer marcha");
+        console.log("5 - Imprimir dados do veículo");
+        console.log("0 - Sair");
 
-    const opcao = +teclado('Escolha uma opção: ');
-    if(opcao === 0){
-        break;
-    }
-    switch (opcao) {
-        case 1:
-            acelerar(carro);
+        const opcao = +teclado('Escolha uma opção: ');
+        if(opcao === 0){
             break;
-        case 2:
-            frear(carro);
-            break;
-        default:
-
-console.table(carro);
-
-function acelerar(veiculo: Veiculo): void{
-    if(veiculo.marchaAtual != 0){
-        veiculo.velocidade += veiculo.potencia * 0.1;
-        console.log(`Velocidade atual: ${veiculo.velocidade.toFixed(1)} km/h`);
-    } else {
-        console.log("Não é possível acelerar com a marcha em ponto morto.");
+        }
+        switch (opcao) {
+            case 1:
+                acelerar(carro);
+                break;
+        
+            default:
+                break;
+        }
     }
-}
 
-function frear(veiculo: Veiculo): void {
+    console.table(carro);
+
+  function acelerar(veiculo: Veiculo): void{
+        if(veiculo.marchaAtual != 0){
+        veiculo.velocidade += veiculo.potencia*0.1;
+        console.log(veiculo.velocidade);
+    }}
+  
+  function frear(veiculo: Veiculo): void {
     if(veiculo.velocidade > 0){
         veiculo.velocidade -= veiculo.potencia * 0.1; // reduz velocidade proporcional à potência
         if(veiculo.velocidade < 0) veiculo.velocidade = 0; // não deixa velocidade negativa
@@ -48,24 +46,6 @@ function frear(veiculo: Veiculo): void {
         console.log("O veículo está parado.");
     }
 }
-
-function criaVeiculo(): Veiculo{
-    const veiculo: Veiculo = new Veiculo();
-    veiculo.marca = teclado('Marca: ');
-    veiculo.modelo = teclado('Modelo: ');
-    veiculo.potencia = +teclado('Potência: ');
-    veiculo.numeroMarchas = +teclado('Número de marchas: ');
-    veiculo.marchaAtual = 0; // ponto morto inicial
-    veiculo.velocidade = 0;  // velocidade inicial
-    return veiculo;
-  
-    console.table(carro);
-
-    function acelerar(veiculo: Veiculo): void{
-        if(veiculo.marchaAtual != 0){
-        veiculo.velocidade += veiculo.potencia*0.1;
-        console.log(veiculo.velocidade);
-    }}
 
     function criaVeiculo(): Veiculo{
         const veiculo: Veiculo = new Veiculo();
@@ -84,6 +64,15 @@ function subirMarcha(veiculo: Veiculo): void {
         console.log("Você já está na marcha máxima!");
     }
 
+function subirMarcha(veiculo: Veiculo): void {
+    if (veiculo.marchaAtual < veiculo.numeroMarchas) {
+        veiculo.marchaAtual += 1;
+        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    } else {
+        console.log("Você já está na marcha máxima!");
+    }
+
 }
 
-console.log(carro);
+    console.log(carro);
+    console.log("Hello world");
