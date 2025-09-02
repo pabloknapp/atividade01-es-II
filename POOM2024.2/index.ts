@@ -27,9 +27,6 @@ while(true){
             frear(carro);
             break;
         default:
-            break;
-    }
-}
 
 console.table(carro);
 
@@ -61,6 +58,32 @@ function criaVeiculo(): Veiculo{
     veiculo.marchaAtual = 0; // ponto morto inicial
     veiculo.velocidade = 0;  // velocidade inicial
     return veiculo;
+  
+    console.table(carro);
+
+    function acelerar(veiculo: Veiculo): void{
+        if(veiculo.marchaAtual != 0){
+        veiculo.velocidade += veiculo.potencia*0.1;
+        console.log(veiculo.velocidade);
+    }}
+
+    function criaVeiculo(): Veiculo{
+        const veiculo: Veiculo = new Veiculo();
+        veiculo.marca = teclado('Marca: ');
+        veiculo.modelo = teclado('Modelo: ');
+        veiculo.potencia = +teclado('Potência: ');
+        veiculo.numeroMarchas = +teclado('Número de marchas: ');
+        return veiculo;
+    }
+
+function subirMarcha(veiculo: Veiculo): void {
+    if (veiculo.marchaAtual < veiculo.numeroMarchas) {
+        veiculo.marchaAtual += 1;
+        console.log(`Marcha atual: ${veiculo.marchaAtual}`);
+    } else {
+        console.log("Você já está na marcha máxima!");
+    }
+
 }
 
 console.log(carro);
