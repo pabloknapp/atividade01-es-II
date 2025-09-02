@@ -53,6 +53,9 @@ function subirMarcha(veiculo: Veiculo): void {
     } else {
         console.log("Você já está na marcha máxima!");
     }
+
 }
 
+    console.log(carro);
+    console.log("Hello world");
 
