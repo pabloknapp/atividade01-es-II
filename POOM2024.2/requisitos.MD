@@ -5,4 +5,3 @@
 4. Frear 
 5. Subir marcha
 6. Reduzir marcha
-
